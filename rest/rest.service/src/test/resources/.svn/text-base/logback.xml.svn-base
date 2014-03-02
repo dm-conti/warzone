@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	
+	<appender name="FILE_DAY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logback.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>zips/logback.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="it.paybay.titan.rest.service" level="DEBUG" />
+	
+	<logger name="org.dbunit" level="INFO">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE_DAY" />
+	</root>
+</configuration>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/40083/projects/miur/warzone/rest/rest.dao/src/main/resources/META-INF/spring
+END
+spring-dao-bean.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/40083/projects/miur/warzone/rest/rest.dao/src/main/resources/META-INF/spring/spring-dao-bean.xml
+END
+spring-dao-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/40083/projects/miur/warzone/rest/rest.dao/src/main/resources/META-INF/spring/spring-dao-config.xml
+END
+spring-dao-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/40083/projects/miur/warzone/rest/rest.dao/src/main/resources/META-INF/spring/spring-dao-context.xml
+END

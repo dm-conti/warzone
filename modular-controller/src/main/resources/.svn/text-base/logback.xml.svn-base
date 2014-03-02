@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	
+	<property name="defaultPattern" value="%d [%thread] %-5level %logger{35} - %msg %n" />
+
+	<!-- backup the log files depending on RollingPolicy -->
+	<appender name="FILE_A_DAY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logback.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>logs/zips/logback.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>${defaultPattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- backup the log files depending on RollingPolicy -->
+	<appender name="FILE_ASPECT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/logback-aspect.log</file>
+		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>logs/zips/logback-aspect.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>${defaultPattern}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${defaultPattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="it.paybay.titan.modular.controller.aspect" level="TRACE">
+		<appender-ref ref="FILE_ASPECT" />
+	</logger>
+	
+	<logger name="it.paybay.titan.modular" level="DEBUG">
+		<appender-ref ref="FILE_A_DAY" />
+	</logger>
+	
+	<logger name="it.paybay.titan.modular.controller" level="DEBUG" />
+
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

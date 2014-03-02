@@ -1,0 +1,5 @@
+#setting the properties for testing
+url=jdbc:hsqldb:file:target/db/entity_hsqldb
+username=sa
+password=
+driver=org.hsqldb.jdbcDriver

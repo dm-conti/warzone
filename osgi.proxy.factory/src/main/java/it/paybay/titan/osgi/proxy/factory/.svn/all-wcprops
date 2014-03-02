@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/39988/projects/miur/warzone/osgi.proxy.factory/src/main/java/it/paybay/titan/osgi/proxy/factory
+END
+ChainedClassloader.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/39988/projects/miur/warzone/osgi.proxy.factory/src/main/java/it/paybay/titan/osgi/proxy/factory/ChainedClassloader.java
+END
+SpringAopOsgiProxyFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/!svn/ver/39988/projects/miur/warzone/osgi.proxy.factory/src/main/java/it/paybay/titan/osgi/proxy/factory/SpringAopOsgiProxyFactory.java
+END
+OsgiProxyFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/39988/projects/miur/warzone/osgi.proxy.factory/src/main/java/it/paybay/titan/osgi/proxy/factory/OsgiProxyFactory.java
+END

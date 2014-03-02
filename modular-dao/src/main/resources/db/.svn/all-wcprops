@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/40027/projects/miur/warzone/modular-dao/src/main/resources/db
+END
+dataset.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/40027/projects/miur/warzone/modular-dao/src/main/resources/db/dataset.xml
+END
+database.properties
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/40027/projects/miur/warzone/modular-dao/src/main/resources/db/database.properties
+END
+db.sql
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/40027/projects/miur/warzone/modular-dao/src/main/resources/db/db.sql
+END

@@ -1,0 +1,41 @@
+package it.paybay.titan.spring.controller;
+
+import it.paybay.titan.rest.model.Entity;
+import it.paybay.titan.rest.service.GenericService;
+import it.paybay.titan.rest.service.exception.CannotAccessRepositoryException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping(value = "/")
+public class HomeController {
+	
+	/* Invoke the methods of the service implementing the business logic. */
+	@Autowired
+	private GenericService genericService;
+    
+	@RequestMapping(method = {RequestMethod.GET})
+	public ModelAndView home() throws Exception {
+		
+		ModelAndView mav = new ModelAndView("home");
+		
+		String msg = "Chissà se và chissà se và....RAFFO";
+		mav.addObject("msg", msg);
+			
+		//invoke the service providing the business data  
+		Entity entity;
+		try {
+			entity = genericService.getEntity("aName");
+			genericService.getEntityFromRepository("aName");
+		} catch (CannotAccessRepositoryException e) {
+			entity = new Entity();
+		}
+		
+		mav.addObject("msg1", "Entity :" +entity.getName());
+		return mav;
+    }
+}

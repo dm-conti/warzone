@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1393500771672
+Build-Jdk: 1.7.0_51
+Built-By: ctenente
+Bundle-Blueprint: OSGI-INF/blueprint/services.xml
+Bundle-ManifestVersion: 2
+Bundle-Name: OsgiProxyFactory for SpringAOP
+Bundle-SymbolicName: it.paybay.titan.osgi.proxy.factory
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependecy: *;scope=compile|runtime;inline=true
+Embed-Transitive: true
+Export-Package: it.paybay.titan.osgi.proxy.factory;uses:="org.aopallianc
+ e.aop";version="1.0.0"
+Export-Service: it.paybay.titan.osgi.proxy.factory.OsgiProxyFactory
+Import-Package: org.aopalliance.aop;version="[1.0,2)",org.springframewor
+ k.aop;version="[2.5,3.4)",org.springframework.aop.framework;version="[2
+ .5,3.4)",org.osgi.framework;version="[1.6,2)",org.springframework.conte
+ xt;version="[2.5,3.4)",org.springframework.context.support;version="[2.
+ 5,3.4)",org.aopalliance.intercept;version="[1.0,2)"
+Tool: Bnd-2.1.0.20130426-122213

@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/40083/projects/miur/warzone/rest/rest.service/src/main/java/it/paybay/titan/rest/service/exception
+END
+CannotAccessRepositoryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/40083/projects/miur/warzone/rest/rest.service/src/main/java/it/paybay/titan/rest/service/exception/CannotAccessRepositoryException.java
+END

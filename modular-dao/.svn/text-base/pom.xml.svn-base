@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.paybay.titan</groupId>
+	<artifactId>modular.dao</artifactId>
+	<version>1.0.0</version>
+	
+	<description>This module contains interfaces and implementations
+	of the DAO Layer. It provides access to the data source.</description>
+	<packaging>jar</packaging>
+	<name>modular DAO</name>
+
+	<properties>
+		<!-- build information -->
+		<build.number>SNAPSHOT</build.number>
+		<build.id>1</build.id>
+
+		<!-- unify the encoding for all the modules -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- maven plugins versions -->
+		<maven.install.plugin.version>2.4</maven.install.plugin.version>
+
+		<!-- JDK version -->
+		<jdk.version>1.6</jdk.version>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+
+		<!-- Spring version -->
+		<spring.version>3.2.4.RELEASE</spring.version>
+
+		<!-- Slf4j version -->
+		<slf4j.version>1.7.5</slf4j.version>
+
+		<!-- Logback version -->
+		<logback.version>1.0.7</logback.version>
+		
+				<!-- JUnit version -->
+		<junit.version>4.11</junit.version>
+
+		<!-- Jackson Library version -->
+		<jackson.version>1.9.12</jackson.version>
+
+		<!-- Apache Commons libraries versions -->
+		<commons.lang3.version>3.1</commons.lang3.version>
+		<commons.lang.version>2.6</commons.lang.version>
+
+		<!-- Java Xml for Jaxb API version -->
+		<javax.xml.jaxbapi.version>2.2.7</javax.xml.jaxbapi.version>
+		<com.sun.xml.jaxbosgi.version>2.2.7</com.sun.xml.jaxbosgi.version>
+		
+		<!-- Hibernate Validation Bundle version -->
+		<hibernate.validator.version>4.1.0.Final_3</hibernate.validator.version>
+		
+		<!-- Java Validation API version -->
+		<javax.validation>1.1.0.Final</javax.validation>
+
+		<!-- JsonAssert version -->
+		<json.assert.version>1.2.0</json.assert.version>
+
+		<!-- AspectJ version -->
+		<aspectj.version>1.7.4</aspectj.version>
+
+		<!-- Cglib version -->
+		<cglib.version>2.2.2</cglib.version>
+
+		<!-- Hsqldb version -->
+		<hsqldb.version>1.8.0.10</hsqldb.version>
+
+		<!-- Mysql Connector version -->
+		<mysql.connector.version>5.1.25</mysql.connector.version>
+
+		<!-- Commons DBCP version -->
+		<commons.dbcp.version>1.4</commons.dbcp.version>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- DB Access Dependencies -->
+		<dependency>
+			<groupId>hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>1.8.0.10</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.25</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- Logging slf4j\logback -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>2.4.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- Custom Dependencies -->
+		<dependency>
+			<groupId>it.paybay.titan</groupId>
+			<artifactId>modular.model</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.install.plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifestEntries>
+							<Export-Package>${project.groupId}.${project.artifactId}*;version=${project.version};-noimport:=true</Export-Package>
+							<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+							<Bundle-Name>${project.name}</Bundle-Name>
+							<FAB-Version-Range-Digits>1</FAB-Version-Range-Digits>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

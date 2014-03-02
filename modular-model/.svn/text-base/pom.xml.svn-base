@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.paybay.titan</groupId>
+	<artifactId>modular.model</artifactId>
+	<version>1.0.0</version>
+	<description>This module contains the Beans (POJO) representing the business model.</description>
+	<packaging>jar</packaging>
+	<name>modular Model</name>
+
+	<properties>
+		<!-- build information -->
+		<build.number>SNAPSHOT</build.number>
+		<build.id>1</build.id>
+
+		<!-- unify the encoding for all the modules -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- maven plugins versions -->
+		<maven.clean.plugin.version>2.5</maven.clean.plugin.version>
+		<maven.resources.plugin.version>2.6</maven.resources.plugin.version>
+
+		<!-- JDK version -->
+		<jdk.version>1.6</jdk.version>
+
+		<!-- Spring version -->
+		<spring.version>3.2.4.RELEASE</spring.version>
+
+		<!-- Spring HATEOAS version -->
+		<spring.hateoas.version>0.5.0.RELEASE</spring.hateoas.version>
+
+		<!-- Slf4j version -->
+		<slf4j.version>1.7.5</slf4j.version>
+
+		<!-- Logback version -->
+		<logback.version>1.0.7</logback.version>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Logging slf4j\logback -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<index>true</index>
+						<manifestEntries>
+							<Export-Package>${project.groupId}.${project.artifactId};version=${project.version};-noimport:=true</Export-Package>
+							<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+							<Bundle-Name>${project.name}</Bundle-Name>
+							<FAB-Version-Range-Digits>1</FAB-Version-Range-Digits>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
